@@ -38,67 +38,36 @@
 <a href="Noorroelen.github.io/index1.html"
 <button class="btn">Maan</button>
 </a>
+<h3>Wat info op een rijtje: </h3>
+<table>
+     <thead>
+          <tr>
+             <th>       </th>
+             <th>Maan</th>
+            <th>Zon</th>
+          </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>foto</td>
+                    <td>lengte van de straal</td>
+                    <td>leeftijd</td>
+                </tr>
+                <tr>
+                    <td> <img sr="http://media.nu.nl/m/8rhx59galg6t_wd1280.jpg/zwitserse-kunstenaar-moet-lichtgevende-maan-van-bergtop-verwijderen.jpg"> </td>
+                    <td> <img sr ="http://carinaholgersson.se/wordpress/wp-content/uploads/2017/10/Yogahelg-2017-5-300x300.jpg" </td>
+                </tr>
+                <tr>
+                    <td>695.508 km</td>
+                    <td>1.737 km</td>
+                </tr>
+                <tr>
+                    <td>4,603E9 jaar</td>
+                    <td>4,53E9 jaar</td>
+                </tr>
+            </tbody>
+        </table>
 
-<h2 style="text-align:center">Foto's</h2>
-
-<div class="row">
-  <div class="column">
-    <img src="https://s3-eu-west-1.amazonaws.com/house-of-awareness/wp-content/uploads/2017/01/09131105/mooncamp.jpg" alt="De standen van de maan" style="width:75%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"> <div class="column">
-    <img src="https://www.natuurfotografie.nl/wp-content/uploads/2015/09/1.FotoJanKoeman-2007-03-04-00-36-12-totale-maansverduistering.jpg" alt="De maan" style="width:75%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-    <img src="http://websitevolzicht.s3.amazonaws.com/zonlichtisgoedvoorje/zon.jpg" alt="Zonsondergang" style="width:75%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-    <img src="http://users.telenet.be/onszonnestelsel/images/zon.jpg" alt="De zon"  style="width:75%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-    </div>
-  </div>
- 
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-
-
-    
-
-<script>
-function openModal() {
-  document.getElementById('myModal').style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById('myModal').style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
     
 </body>
 
