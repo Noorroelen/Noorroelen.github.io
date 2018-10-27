@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { 
+
+    background-color: rgb(252, 169, 81); 
+
+       }
+
+
+</style>
+</head>
+<body>
+<h2 id="zonvsmaan">Zon VS Maan</h2>
+<h2 style="text-align:center">Foto's</h2>
+<div class="row">
+  <div class="column">
+    <img src="https://s3-eu-west-1.amazonaws.com/house-of-awareness/wp-content/uploads/2017/01/09131105/mooncamp.jpg" alt="De standen van de maan" style="width:75%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"> <div class="column">
+    <img src="https://www.natuurfotografie.nl/wp-content/uploads/2015/09/1.FotoJanKoeman-2007-03-04-00-36-12-totale-maansverduistering.jpg" alt="De maan" style="width:75%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    <img src="media.point2.com/p2a/htmltext/d7a2/36e3/b058/567f7f25b358e0b55218/original.jpg" alt="Zonsondergang" style="width:75%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    <img src="http://users.telenet.be/onszonnestelsel/images/zon.jpg" alt="De zon"  style="width:75%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div class="caption-container">
+
+      <p id="caption"></p>
+
+    </div>
+
+
+
+
+
+    
+
+
+
+<script>
+
+function openModal() {
+
+  document.getElementById('myModal').style.display = "block";
+
+}
+
+
+
+function closeModal() {
+
+  document.getElementById('myModal').style.display = "none";
+
+}
+
+
+
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+
+
+function plusSlides(n) {
+
+  showSlides(slideIndex += n);
+
+}
+
+
+
+function currentSlide(n) {
+
+  showSlides(slideIndex = n);
+
+}
+
+
+
+function showSlides(n) {
+
+  var i;
+
+  var slides = document.getElementsByClassName("mySlides");
+
+  var dots = document.getElementsByClassName("demo");
+
+  var captionText = document.getElementById("caption");
+
+  if (n > slides.length) {slideIndex = 1}
+
+  if (n < 1) {slideIndex = slides.length}
+
+  for (i = 0; i < slides.length; i++) {
+
+      slides[i].style.display = "none";
+
+  }
+
+  for (i = 0; i < dots.length; i++) {
+
+      dots[i].className = dots[i].className.replace(" active", "");
+
+  }
+
+  slides[slideIndex-1].style.display = "block";
+
+  dots[slideIndex-1].className += " active";
+
+  captionText.innerHTML = dots[slideIndex-1].alt;
+
+}
+
+</script>
+
+    
+
+</body>
+
+
+
+
+
+</body>
+
+</html>
