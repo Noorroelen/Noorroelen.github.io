@@ -1,127 +1,135 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body { 
+* {
+    box-sizing: border-box;
+}
 
-    background-color: rgb(252, 169, 81); 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-       }
+.header {
+    text-align: center;
+    padding: 32px;
+}
 
+.row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
 
+/* Create two equal columns that sits next to each other */
+.column {
+    -ms-flex: 50%; /* IE 10 */
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
 </style>
-</head>
 <body>
-<h2 id="zonvsmaan">Zon VS Maan</h2>
-<h2 style="text-align:center">Foto's</h2>
-<div class="row">
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Foto's van de zon</h1>
+  <p>Klik op de buttons op de layout de veranderen</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+  <button class="btn" onclick="four()">4</button>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
   <div class="column">
-    <img src="https://s3-eu-west-1.amazonaws.com/house-of-awareness/wp-content/uploads/2017/01/09131105/mooncamp.jpg" alt="De standen van de maan" style="width:75%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"> <div class="column">
-    <img src="https://www.natuurfotografie.nl/wp-content/uploads/2015/09/1.FotoJanKoeman-2007-03-04-00-36-12-totale-maansverduistering.jpg" alt="De maan" style="width:75%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-    <img src="media.point2.com/p2a/htmltext/d7a2/36e3/b058/567f7f25b358e0b55218/original.jpg" alt="Zonsondergang" style="width:75%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-    <img src="http://users.telenet.be/onszonnestelsel/images/zon.jpg" alt="De zon"  style="width:75%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-    </div>
+    <img src="http://prd.megamerel.nl/wp-content/uploads/2014/09/zon1.jpg" style="width:100%">
+    <img src="http://4.bp.blogspot.com/-K8N9G3O5GN0/U2ydmhmvjWI/AAAAAAAAHpk/Re13-tIpjvo/s1600/Sunce-685x455.jpg" style="width:100%">
+    <img src="https://1.bp.blogspot.com/-T0O3YHp_dSQ/V1kWWXCUYFI/AAAAAAACJxY/ynN_LTEstOgpU77Zd8iZKK-UT_pcWQnigCLcB/s1600/3.jpg
+" style="width:100%">
+    <img src="http://static.panoramio.com/photos/original/16946735.jpg" style="width:100%">
+    <img src="http://www.astroblogs.nl/wp-content/uploads/2013/10/zonsondergang.jpg" style="width:100%">
+    <img src="https://lynnenkavitastoriesanddrawings.files.wordpress.com/2015/05/de-zon_artikel-de-zon-de-maan-en-de-godin.jpg
+" style="width:100%">
   </div>
-
-  <div class="caption-container">
-
-      <p id="caption"></p>
-
-    </div>
-
-
-
-
-
-    
-
+  <div class="column">
+    <img src="https://jean-paulopperman.nl/wp-content/uploads/2016/01/scheveningen-zee-zonsondergang.jpg" style="width:100%">
+    <img src="https://d2z3jx1tdlgbth.cloudfront.net/bec70c2079438e9531cdea8b6feb3277.jpg" style="width:100%">
+    <img src="https://janjaap01.files.wordpress.com/2013/03/p1000516.jpg" style="width:100%">
+    <img src="https://maken.wikiwijs.nl/userfiles/e0c253e60bd7fcca78440ef217dceef552ce6d6a.jpg
+" style="width:100%">
+    <img src="https://4.bp.blogspot.com/-NKR7It0bU-w/V1kWaW1b60I/AAAAAAACJxk/vntLhstSnSECHo3A8E3I4LCbTqTyDovCQCLcB/s1600/4.jpg" style="width:100%">
+    <img src="https://fokkerspace.nl/wp-content/uploads/2017/06/Veilig-in-de-zon.png" style="width:100%">
+  </div>  
 
 
 <script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
 
-function openModal() {
+// Declare a loop variable
+var i;
 
-  document.getElementById('myModal').style.display = "block";
-
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "100%";  // IE10
+        elements[i].style.flex = "100%";
+    }
 }
 
-
-
-function closeModal() {
-
-  document.getElementById('myModal').style.display = "none";
-
+// Two images side by side
+function two() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "50%";  // IE10
+        elements[i].style.flex = "50%";
+    }
 }
 
-
-
-var slideIndex = 1;
-
-showSlides(slideIndex);
-
-
-
-function plusSlides(n) {
-
-  showSlides(slideIndex += n);
-
+// Four images side by side
+function four() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "25%";  // IE10
+        elements[i].style.flex = "25%";
+    }
 }
 
-
-
-function currentSlide(n) {
-
-  showSlides(slideIndex = n);
-
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }
-
-
-
-function showSlides(n) {
-
-  var i;
-
-  var slides = document.getElementsByClassName("mySlides");
-
-  var dots = document.getElementsByClassName("demo");
-
-  var captionText = document.getElementById("caption");
-
-  if (n > slides.length) {slideIndex = 1}
-
-  if (n < 1) {slideIndex = slides.length}
-
-  for (i = 0; i < slides.length; i++) {
-
-      slides[i].style.display = "none";
-
-  }
-
-  for (i = 0; i < dots.length; i++) {
-
-      dots[i].className = dots[i].className.replace(" active", "");
-
-  }
-
-  slides[slideIndex-1].style.display = "block";
-
-  dots[slideIndex-1].className += " active";
-
-  captionText.innerHTML = dots[slideIndex-1].alt;
-
-}
-
 </script>
 
-    
-
 </body>
-
-
-
-
-
-</body>
-
 </html>
